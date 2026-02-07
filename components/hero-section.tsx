@@ -106,7 +106,7 @@ export default function HeroSection() {
           {[...Array(30)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-12 bg-gradient-to-b from-blue-300 to-blue-400 opacity-40"
+              className="absolute w-1 h-12 bg-linear-to-b from-blue-300 to-blue-400 opacity-40"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -156,11 +156,10 @@ export default function HeroSection() {
         {/* Weather badge */}
         {weather && (
           <div
-            className={`inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md mb-8 border animate-fade-in ${
-              isDarkWeather
-                ? 'bg-white/20 border-white/30 text-white'
-                : 'bg-black/10 border-black/20 text-gray-900'
-            }`}
+            className={`inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-md mb-8 border animate-fade-in ${isDarkWeather
+              ? 'bg-white/20 border-white/30 text-white'
+              : 'bg-black/10 border-black/20 text-gray-900'
+              }`}
           >
             {getWeatherIcon()}
             <div className="text-left">
@@ -184,7 +183,7 @@ export default function HeroSection() {
           }}
         >
           Platform Periklanan Mobile{' '}
-          <span className="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent">
             Paling Inovatif
           </span>
         </h1>
@@ -201,11 +200,10 @@ export default function HeroSection() {
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
             <Button
               size="lg"
-              className={`w-full group text-lg px-8 py-6 ${
-                isDarkWeather
-                  ? 'bg-white text-gray-900 hover:bg-gray-100'
-                  : 'bg-emerald-600 text-white hover:bg-emerald-700'
-              }`}
+              className={`w-full group text-lg px-8 py-6 ${isDarkWeather
+                ? 'bg-white text-gray-900 hover:bg-gray-100'
+                : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                }`}
             >
               Mulai Sekarang
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -213,12 +211,11 @@ export default function HeroSection() {
           </a>
           <Button
             size="lg"
-            variant="outline"
-            className={`text-lg px-8 py-6 ${
-              isDarkWeather
-                ? 'border-white/50 text-white hover:bg-white/10'
-                : 'border-gray-400 text-gray-900 hover:bg-black/5'
-            }`}
+            variant="ghost"
+            className={`text-lg px-8 py-6 backdrop-blur-sm ${isDarkWeather
+              ? 'text-white hover:bg-white/10'
+              : 'text-gray-600 hover:bg-black/5 hover:text-gray-900'
+              }`}
           >
             Jadwalkan Demo
           </Button>
@@ -236,16 +233,14 @@ export default function HeroSection() {
             return (
               <div
                 key={idx}
-                className={`p-4 rounded-lg backdrop-blur-md border transition-all hover:scale-105 ${
-                  isDarkWeather
-                    ? 'bg-white/10 border-white/20 hover:bg-white/20'
-                    : 'bg-black/10 border-black/10 hover:bg-black/20'
-                }`}
+                className={`p-4 rounded-lg backdrop-blur-md border transition-all hover:scale-105 ${isDarkWeather
+                  ? 'bg-white/10 border-white/20 hover:bg-white/20'
+                  : 'bg-black/10 border-black/10 hover:bg-black/20'
+                  }`}
               >
                 <Icon
-                  className={`w-6 h-6 mx-auto mb-2 ${
-                    isDarkWeather ? 'text-white' : 'text-gray-700'
-                  }`}
+                  className={`w-6 h-6 mx-auto mb-2 ${isDarkWeather ? 'text-white' : 'text-gray-700'
+                    }`}
                 />
                 <p className={`text-xs font-medium ${mutedTextColor}`}>{stat.label}</p>
                 <p className={`text-xl font-bold ${textColor}`}>{stat.value}</p>
@@ -258,9 +253,8 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <div
-          className={`${
-            isDarkWeather ? 'text-white' : 'text-gray-700'
-          }`}
+          className={`${isDarkWeather ? 'text-white' : 'text-gray-700'
+            }`}
         >
           <svg
             className="w-6 h-6"
